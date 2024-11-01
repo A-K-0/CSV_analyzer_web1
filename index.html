@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibnet</title>
+    <link rel="icon" href="images/bg_removed_bib.png" type="image/x-icon">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="menu-icon">☰</div>
+        <a href="#" class="logo">
+           <img style="width: 9rem; height: 4.5rem;" src="./images/bg_removed_bib.png" alt="">
+    
+        </a>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search">
+            <button  class="search-button"><svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path clip-rule="evenodd" d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z" fill-rule="evenodd"></path></svg></button>
+        </div>
+
+        <div id="uploadContainer" class="upload-container">
+
+            <input type="file" id="fileInput" accept=".csv" style="display: none">
+            <button class="select-files-btn" onclick="document.getElementById('fileInput').click()"><img style="width:2rem; background-color:1b1b1b ;" src="./images/WhatsApp Image 2024-10-31 at 05.17.28.jpeg" alt=""></button>
+        </div>
+
+        <div class="user-actions">
+            <img id="img" draggable="false" style="border-radius: 50%;" alt="Avatar image" height="32" width="32" src="/images/aditya_Kasarla_photo.png">
+        </div>
+
+       
+    </header>
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4ykAepVkG5Y" frameborder="0" allowfullscreen></iframe> -->
+   
+     <!-- filters --> 
+    <div class="filters">
+        <button class="filter-options active">all</button>
+        <button class="filter-options">Publications</button>
+        <button class="filter-options">Datasets</button>
+        <button class="filter-options">python</button>
+        <button class="filter-options">Statistics</button>
+        <button class="filter-options">Visualizations</button>
+        <button class="filter-options">Networks</button>
+        <button class="filter-options">Trending Research</button>
+        <button class="filter-options">machine learning</button>
+        <button class="filter-options">EDA</button>
+    </div>
+
+     <!-- _________________ Side Bar _________________ -->
+     <div class="sidebar">
+        <div class="shortcut-links">
+            <a href=""><p>Dashboard</p></a>
+            <a href=""><p>Quick Analysis</p></a>
+            <a href=""><p>My Studies</p></a>
+            <a href=""><p>Repository</p></a>
+            <a href=""><p>Analysis History</p></a>
+            <a href=""><p>Study Collections</p></a>
+            <a href=""><p>Notifications</p></a>
+            <a href=""><p>Show More</p></a>
+            <hr>
+        </div>
+
+        <div class="subscribed-list">
+            <h3 style="color: #fff;">Research Papers</h3>
+            <a href=""><p>The future of data analysis</p></a>
+            <a href=""><p>Handbook of data analysis</p></a>
+            <a href=""><p>Introduction to geological data analysis</p></a>
+            <a href=""><p>Time series: data analysis and theory</p></a>
+            <a href=""><p>Multi-and megavariate data analysis basic principles and applications</p></a>
+        </div>
+     </div>
+
+     <!-- ------main------------- -->
+
+     <div class="container">
+
+     
+     <div class="list-container">
+        <!-- videos -->
+        <div class="vid-list">
+            <a href="">
+                
+                <div class="video">
+                        <video class="thevideo" loop muted poster="./images/WhatsApp Image 2024-10-31 at 04.42.28.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Research Funding Distribution</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="play-video-1.html">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="./images/WhatsApp Image 2024-10-31 at 04.43.00.jpeg" >
+                            <source src="g" type="video/mp4">
+                        </video>
+                    </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="./images/WhatsApp Image 2024-10-31 at 04.42.28.jpeg">Global Collaboration Map</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 04.43.23.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="./images/WhatsApp Image 2024-10-31 at 05.15.38.jpeg">Temporal evolution of covid 19 research</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 04.44.00.jpeg" >
+                            <source src="" type="">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Global Collaboration Networks in Climate Change Research: 2010-2023</a>
+                    <p>Adityakasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.11.33.jpeg">
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="" style="color: #fff;">Citation impact in ML research</a>
+                    <p>Adityakasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.12.02 (1).jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Research topic trends in Computer science</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.12.22.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Various parts of research using AI</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                
+                <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.12.39.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Topic Evolution Stream</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="play-video-1.html">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.14.38 (1).jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="play-video-1.html">Research Funding Distribution</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.14.54.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Publication impact Analysis</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.12.02 (1).jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Popular research topics</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 05.11.33.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Impact of citations</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 04.43.23.jpeg">
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="">Temporal evolution during covid 19</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="vid-list">
+            <a href="">
+                <div class="">
+                    <div class="video">
+                        <video class="thevideo" loop muted poster="images/WhatsApp Image 2024-10-31 at 04.43.41.jpeg" >
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </a>
+
+            <div class="flex-div">
+                <a href="">
+                    <img src="/images/aditya_Kasarla_photo.png" alt="">
+                </a>
+
+                <div class="vid-info">
+                    <a href="play-video-1.html">Research funding in STEM fields</a>
+                    <p>Aditya Kasarla</p>
+                    <p>340k Views &bull; 1 month ago</p>
+                </div>
+            </div>
+        </div>
+
+        
+     </div>
+</div>
+   
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="mainContent" class="main-content hidden">
+        <div class="video-container">
+            <div class="chart-container">
+                <canvas id="dataChart"></canvas>
+            </div>
+            <div class="video-info">
+                <h2 id="chartTitle">Data Analysis</h2>
+                <div id="fileInfo"></div>
+            </div>
+        </div>
+        
+        <div class="recommendations">
+            <div class="control-panel">
+                <h3 style="margin-bottom: 16px">Chart Controls</h3>
+                <div class="control-group">
+                    <label for="xAxis">X-Axis</label>
+                    <select id="xAxis"></select>
+                </div>
+                <div class="control-group">
+                    <label for="yAxis">Y-Axis</label>
+                    <select id="yAxis"></select>
+                </div>
+                <div class="control-group">
+                    <label for="chartType">Chart Type</label>
+                    <select id="chartType">
+                        <option value="line">Line</option>
+                        <option value="bar">Bar</option>
+                        <option value="scatter">Scatter</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="lineColor">Line Color</label>
+                    <input type="color" id="lineColor" value="#3ea6ff">
+                </div>
+                <div class="control-group">
+                    <label for="pointStyle">Point Style</label>
+                    <select id="pointStyle">
+                        <option value="circle">Circle</option>
+                        <option value="triangle">Triangle</option>
+                        <option value="rect">Square</option>
+                        <option value="star">Star</option>
+                    </select>
+                </div>
+                <button class="apply-btn" onclick="updateChart()">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
