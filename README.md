@@ -5,6 +5,12 @@
 ## Overview
 BibNet is a powerful web-based platform for analyzing and visualizing research data. This tool allows users to upload their research data in CSV format and create interactive visualizations for better insights.
 
+## System Requirements
+
+Modern web browser (Chrome, Firefox, Safari, Edge)
+Local server capability 
+Minimum screen resolution: 1024x768
+
 ## Installation
 
 1. Download the ZIP file containing the platform files
